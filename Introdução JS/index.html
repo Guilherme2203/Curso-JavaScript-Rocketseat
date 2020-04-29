@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Curso JavaScript</title>
+    </head>
+    <body>
+
+        <script>
+
+            //Tipos de variaveis [String, integer, float ou double, boolean]
+            var nome = "Diego";
+            var idade = 24;
+            var peso = 80.5;
+            var humano = true;
+
+            //Outras representaçoes de variaveis
+            var x = 10, y = 20;
+            
+            //Exemplo de Array
+            var alunos = ['Diego', 'Guilherme', 'Lucas'];
+            
+            //Exemplo de Objeto
+            var aluno = {
+                nome: 'guilherme',
+                idade: 23,
+                peso: 57,
+                humano: true,
+            }
+
+            //Matematica
+
+            var resultado = x+y;
+            
+            //incrementar valor x = x + 3;
+            x += 3;
+
+            var result = soma(x, y);
+
+            function soma(num1, num2){
+                var resultado = num1 + num2;
+
+                return resultado;
+            }
+
+            var sexo = returnSex('M');
+
+            function returnSex(sexo){
+                if(sexo === 'M'){
+                    return 'Masculino';
+                }else if(sexo === 'F'){
+                    return 'Feminino';
+                }else{
+                    return 'Outros';
+                }
+            }
+
+            var faixaEtaria = returnFaixa(2);
+
+            function returnFaixa(faixa){
+                switch (faixa){
+                    case 1:
+                        return 'Jovem';
+                    case 2:
+                        return 'Adulto';
+                    case 3:
+                        return 'Idoso';
+                    default:
+                        return 'dinosauro';
+                }
+            }
+
+            /**
+            Operadores logicos
+            And &&, Or ||, Not !==
+            **/
+            var sexo2 = 'M', idade2 = aluno.idade;
+
+            if(sexo2 === 'M' && idade2 >= 18){
+                document.write('Ok os dois estao certos!'+"<br>");
+            }else{
+                document.write('Not Ok');
+            }
+
+            if(sexo2 === 'M' || idade2 < 18){
+                document.write('Ok apenas um dois esta certos!'+"<br>");
+            }else{
+                document.write('Not Ok');
+            }
+
+            if(sexo2 !== 'F' ){
+                document.write('Diferente do sexo2 definido!'+"<br>");
+            }else{
+                document.write('Not Ok');
+            }
+
+            /*
+            Intervalo e Timeout
+            */
+           function exibeAlgo(){
+            console.log("Hello World!!"+"<br>");
+           }
+
+           //setInterval(exibeAlgo, 1000); fica exibindo.
+           setTimeout(exibeAlgo, 5000); // exibe no tempo definido.
+
+            //Apresentação no console
+            document.write(alunos[1]+"<br>");
+            document.write(aluno.idade+"<br>");
+            document.write(x+","+"<br>"+y+"<br>");
+            document.write("Resultado da soma: ",resultado+"<br>");
+            document.write("Resultado da função soma: ",result+"<br>");
+            document.write("Resultado da analise do sexo: ",sexo+"<br>");
+            document.write("Resultado da faixa etaria: ",faixaEtaria+"<br>");
+
+            var repete = repetir();
+            
+            function repetir(){
+                for(var i = 0; i<= 5; i++){
+                    document.write(i+"<br>");
+                }
+            }
+            
+        </script>
+    </body>
+</html>

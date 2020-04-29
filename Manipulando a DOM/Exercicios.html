@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Curso JavaScript</title>
+    </head>
+    <body>
+
+        <div id="app">
+            <button class=botao>Criar bloco vermelho</button>
+        </div>
+
+        <script>
+            var btnElement = document.querySelector('button.botao');
+
+            btnElement.onclick = function() {
+                var boxElement = document.createElement('div');
+                boxElement.setAttribute('class', 'box');
+
+                var criarElemento = document.querySelector('#app');
+                criarElemento.appendChild(boxElement)
+
+
+                criarElemento = document.querySelector('.box');
+                
+                boxElement.style.width = '100px';
+                boxElement.style.height = '100px';
+                boxElement.style.backgroundColor = '#f00';
+
+            }
+
+            var blkElement = document.querySelector('#app');
+
+            blkElement.onmouseover = function(){
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+
+                for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+                }
+
+                var boxElement = document.querySelector('.box');
+
+                boxElement.style.backgroundColor = color;
+            }
+
+        </script>
+    </body>
+</html>
